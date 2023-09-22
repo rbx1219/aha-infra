@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./etc/cert/fullchain.pem:/etc/nginx/fullchain.pem
+      - ./etc/cert/privkey.pem:/etc/nginx/privkey.pem
+    restart: always
+    network_mode: "host"
